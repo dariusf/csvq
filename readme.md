@@ -8,7 +8,7 @@ Glue for manipulating CSV files in shell pipelines.
 ## Usage
 
 ```sh
-$ csvq a.csv -q 'select * from a'
+$ csv a.csv -q 'select * from a'
 ```
 
 This runs an SQL query on the given file(s) and writes CSV to stdout.
@@ -21,7 +21,7 @@ This runs an SQL query on the given file(s) and writes CSV to stdout.
 If you need to perform more than a single query, load your data into SQLite:
 
 ```sh
-$ csvq a.csv
+$ csv a.csv
 ```
 
 ## Installation
