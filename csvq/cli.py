@@ -33,14 +33,6 @@ def guess_type(s):
     return 'text'
 
 
-def guess_widths(s):
-  if s.isdigit():
-    # right-justifies
-    return -(len(s) + 5)
-  else:
-    return len(s) + 5
-
-
 def guess_schema(args, file, table):
   '''
   Why is this needed?
@@ -59,15 +51,8 @@ def guess_schema(args, file, table):
         schema['names'] = [snake_case(l) for l in line]
         schema['old_names'] = line
       elif i == 1:
-        # "sample" by looking at the first row
+        # "Sample" by looking at the first row.
         schema['types'] = [guess_type(cell) for cell in line]
-
-        # Idea: automatically determine widths by sampling rows. Problem is
-        # there's no good way to do this deterministically without reading the
-        # entire file. Doing every N rows depends on file length. Reservoir
-        # sampling isn't deterministic. Also needed only in interactive mode.
-
-        # schema['widths'] = [guess_widths(cell) for cell in line]
       else:
         break
   return schema

@@ -15,7 +15,7 @@ This runs an SQL query on the given file(s) and writes CSV to stdout.
 
 - Files map to tables and are expected to have headers
 - Table and column names are snake_cased so they don't have to be quoted
-- Rows are sampled to determine column types
+- Column types are guessed from the first row
 - `id` and `*_id` columns are indexed
 
 If you need to perform more than a single query, load your data into SQLite:
