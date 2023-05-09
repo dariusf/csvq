@@ -1,14 +1,18 @@
 
-Glue for manipulating CSV files in shell pipelines.
+Full SQL for manipulating CSV files in shell pipelines.
 
-- Less fragile than using `cut` or `awk` to extract columns
-- Full SQL (joins, subqueries, CTEs, etc.)
-- Requires Python 3.5.2+ and `sqlite3`
+## Installation
+
+```sh
+pip install git+https://github.com/dariusf/csvq.git
+```
+
+Requires `sqlite3` on the PATH.
 
 ## Usage
 
 ```sh
-$ csv a.csv -q 'select * from a'
+csv a.csv -q 'select * from a'
 ```
 
 This runs an SQL query on the given file(s) and writes CSV to stdout.
@@ -21,11 +25,5 @@ This runs an SQL query on the given file(s) and writes CSV to stdout.
 If you need to perform more than a single query, load your data into SQLite:
 
 ```sh
-$ csv a.csv
-```
-
-## Installation
-
-```sh
-pip install git+https://github.com/dariusf/csvq.git
+csv a.csv
 ```
