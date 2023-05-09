@@ -1,0 +1,16 @@
+[project]
+name = "csvq"
+version = "0.0.1"
+description = "Query CSV files with SQL"
+authors = [
+  { name = "Darius Foo", email = "darius.foo.tw@gmail.com" }
+]
+license.text = "MIT"
+requires-python = ">=3.10"
+
+[project.urls]
+homepage = "http://github.com/dariusf/csvq"
+
+[project.scripts]
+csv = "csvq.cli:main"
+csvq = "csvq.cli:main"
